@@ -1,8 +1,11 @@
 'use strict';
+
+const REGION = process.env.REGION
+
 const aws = require('aws-sdk');
 const co = require('co');
-const dynamodb = new aws.DynamoDB({region: 'ap-northeast-1'});
-const cw = new aws.CloudWatch({region: 'ap-northeast-1'});
+const dynamodb = new aws.DynamoDB({region: REGION});
+const cw = new aws.CloudWatch({region: REGION});
 const slack = require('slack');
 
 
